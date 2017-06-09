@@ -11,5 +11,6 @@ RUN yum -y install x2goserver && yum clean all
 RUN yum -y groupinstall mate && yum clean all
 RUN yum -y reinstall glibc-common && yum clean all
 
-RUN rpm -ivh https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm && yum -y install mysql-server mysql-community-devel mysql-workbench && yum clean all
-RUN curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm > jdk-8u131-linux-x64.rpm && rpm -ivh jdk-8u131-linux-x64.rpm && rm *.rpm
+RUN yum -y install mariadb-server mariadb-devel && yum clean all
+RUN rpm -ivh https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm && yum -y install mysql-workbench && yum clean all
+RUN curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm > jdk-8u131-linux-x64.rpm && rpm -ivh jdk-8u131-linux-x64.rpm && rm -f *.rpm
