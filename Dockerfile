@@ -3,7 +3,7 @@ MAINTAINER Vincent FENET <vincent@fenet.fr>
 
 RUN yum install -y yum-plugin-ovl && yum clean all
 ADD ./dnf-stack-el7.repo /etc/yum.repos.d/dnf-stack-el7.repo
-RUN yum -y install wget sudo openssh-server git xinetd socat make dos2unix httpd nano elinks pytz glibc.i686 zip unzip cpanminus which file mailx mutt bind-utils vim python2 python-pip python-virtualenv dnf && yum -y group install "Development Tools" && yum clean all
+RUN yum -y install wget sudo openssh-server git xinetd socat make dos2unix httpd nano elinks pytz glibc.i686 zip unzip cpanminus which file mailx mutt bind-utils vim python2 python-pip python-virtualenv dnf samba samba-client expect && yum -y group install "Development Tools" && yum clean all
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ADD ./pycharm.repo /etc/yum.repos.d/pycharm.repo
 RUN yum -y install pycharm-community && yum clean all
