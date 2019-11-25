@@ -1,4 +1,4 @@
-FROM centos:7.2.1511
+FROM centos:7.5.1804
 MAINTAINER Vincent FENET <vincent@fenet.fr>
 
 RUN yum install -y yum-plugin-ovl && yum clean all
